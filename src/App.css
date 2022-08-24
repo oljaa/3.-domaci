@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+.number-item{
+  min-width: 40px;
+  min-height: 40px;
+  background-color: white;
+}
+.hover:hover{
+  cursor: pointer;
+  background-color: #e5e5e5;
+}
