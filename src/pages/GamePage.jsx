@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import lodash from 'lodash'
+import lodash from 'lodash';
+import React, { useState } from 'react';
 import NumberItem from '../components/NumberItem';
 export default function GamePage(props) {
   const [currentPrisoner, setCurrentPrisoner] = useState(0);
@@ -15,9 +15,6 @@ export default function GamePage(props) {
   const won = currentPrisoner === -1;
   const currentPrisonerWon = openedNumbers.includes(currentPrisoner);
   const end = won || (leftTries == 0 && !currentPrisonerWon);
-
-  useEffect(() => {
-  }, [leftTries])
 
   return (
     <div className='container mt-2'>
@@ -70,6 +67,7 @@ export default function GamePage(props) {
               numbers.map((element, index) => {
                 return (
                   <NumberItem
+                    key={element}
                     index={index + 1}
                     disabled={currentPrisonerWon}
                     selected={openedNumbers.includes(element)}
